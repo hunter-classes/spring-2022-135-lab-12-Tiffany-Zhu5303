@@ -2,6 +2,7 @@
 #include <vector>
 #include "doctest.h"
 #include "vectors.h"
+#include "optimism.h"
 
 TEST_CASE("making vectors"){
   std::vector<int> first = makeVector(6);
