@@ -3,6 +3,7 @@
 
 #include "vectors.h"
 #include "optimism.h"
+#include "fusion.h"
 
 int main(){
   std::cout << "----------Task A-------------" << std::endl;
@@ -21,6 +22,16 @@ int main(){
   printVector(random);
 
   std::cout << "\nNow the vector has only positive integers (not including 0)" << std::endl;
+  printVector(goodVibes(random));
+
+  std::cout << "\n----------Task C-------------" << std::endl;
+  std::cout << "The vector of positive integers from Task B is added to the end of Task A and the vector from Task B is cleared" << std::endl;
+
+  gogeta(numbers, random);
+
+  std::cout << "Task A ";
+  printVector(numbers);
+  std::cout << "Task B ";
   printVector(goodVibes(random));
 
   return 0;

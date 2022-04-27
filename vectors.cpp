@@ -13,10 +13,14 @@ std::vector<int> makeVector(int n){
 }
 
 void printVector(std::vector<int> v){
-  std::cout << "Vector: [";
-  int length = v.size();
-  for(int i = 0; i < length - 1; i++){
-    std::cout << v[i] << ", ";
+  if(v.empty() == false){
+    std::cout << "Vector: [";
+    int length = v.size();
+    for(int i = 0; i < length - 1; i++){
+      std::cout << v[i] << ", ";
+    }
+    std::cout << v.back() << "]" << std::endl;
+  }else{
+    std::cout << "Vector: empty" << std::endl;
   }
-  std::cout << v.back() << "]" << std::endl;
 }
