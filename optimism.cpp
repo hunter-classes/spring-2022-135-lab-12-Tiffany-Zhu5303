@@ -4,7 +4,6 @@
 #include "optimism.h"
 
 std::vector<int> makeRandom(int n){
-  srand(time(NULL));
   std::vector<int> random;
   for(int i = 0; i < n; i++){
     random.push_back(rand()% (20 - 1) - 10);

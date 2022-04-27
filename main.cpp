@@ -1,11 +1,15 @@
 #include <iostream>
 #include <vector>
+#include <stdlib.h>
+#include <time.h>
 
 #include "vectors.h"
 #include "optimism.h"
 #include "fusion.h"
+#include "pairwise.h"
 
 int main(){
+  srand(time(0));
   std::cout << "----------Task A-------------" << std::endl;
   int number = 26;
 
@@ -33,6 +37,18 @@ int main(){
   printVector(numbers);
   std::cout << "Task B ";
   printVector(goodVibes(random));
+
+  std::cout << "\n----------Task D-------------" << std::endl;
+  number = 9;
+  random = makeRandom(number);
+  printVector(random);
+  
+  number = 13;
+  std::vector<int> random2 = makeRandom(number);
+  printVector(random2);
+
+  std::cout << "The third vector is the addition of the first two vectors of this task\n" << std::endl;
+  printVector(sumPairWise(random, random2));
 
   return 0;
 }

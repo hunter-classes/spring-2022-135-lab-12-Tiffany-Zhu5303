@@ -1,5 +1,5 @@
-OBJECTS = vectors.o optimism.o fusion.o
-HFILES = vectors.h optimism.h fusion.h
+OBJECTS = vectors.o optimism.o fusion.o pairwise.o
+HFILES = vectors.h optimism.h fusion.h pairwise.h
 
 main: main.o $(OBJECTS)
 	g++ -o main main.o $(OBJECTS)
@@ -14,6 +14,8 @@ vectors.o: vectors.cpp vectors.h
 optimism.o: optimism.cpp optimism.h
 
 fusion.o: fusion.cpp fusion.h
+
+pairwise.o: pairwise.cpp pairwise.h
 
 tests.o: tests.cpp doctest.h $(HFILES)
 
