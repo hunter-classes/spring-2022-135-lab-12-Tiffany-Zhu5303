@@ -4,6 +4,7 @@
 #include "vectors.h"
 #include "optimism.h"
 #include "fusion.h"
+#include "pairwise.h"
 
 TEST_CASE("making vectors"){
   std::vector<int> first = makeVector(6);
@@ -40,3 +41,17 @@ TEST_CASE("fusing vectors"){
   CHECK(fourth.at(4) == 4);
   CHECK(fourth.back() == 16);
 }
+
+TEST_CASE("adding vectors"){
+  std::vector<int> sixth = {1, 11, 2, -6, 4};
+  std::vector<int> seventh = {4, 6, -6, 1, 8, 3};
+  std::vector<int> eigth = sumPairWise(sixth, seventh);
+
+  CHECK(eigth.front() == 5);
+  CHECK(eigth.size() == 6);
+  CHECK(eigth.back() == 3);
+  CHECK(eigth.at(4) == 12);
+}
+
+  
+  
