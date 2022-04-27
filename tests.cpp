@@ -3,6 +3,7 @@
 #include "doctest.h"
 #include "vectors.h"
 #include "optimism.h"
+#include "fusion.h"
 
 TEST_CASE("making vectors"){
   std::vector<int> first = makeVector(6);
@@ -27,4 +28,15 @@ TEST_CASE("vector of positive integers only"){
 
   CHECK(positiveThird.front() == 1);
   CHECK(positiveThird.back() == 6);
+}
+
+TEST_CASE("fusing vectors"){
+  std::vector<int> fourth = {3, 6, 9, 12};
+  std::vector<int> fifth = {4, 8, 12, 16};
+  gogeta(fourth, fifth);
+
+  CHECK(fourth.size() == 8);
+  CHECK(fifth.empty() == true);
+  CHECK(fourth.at(4) == 4);
+  CHECK(fourth.back() == 16);
 }
